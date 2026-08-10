@@ -1,13 +1,13 @@
 export const profile = {
   name: "Imon Kalyan Ghosh",
-  role: "Your role or target title",
-  headline: "Building thoughtful software, research, and digital products.",
+  role: "AI / Full Stack Engineer",
+  headline: "I build production-grade AI applications that connect LLMs, full-stack systems, automation workflows, observability, and cloud deployment to solve real business problems reliably.",
   location: "City, Country",
   availability: "Open to internships, research collaborations, or full-time roles",
-  email: "your.email@example.com",
+  email: "imonghose@gmail.com",
   github: "https://github.com/imonghosh",
-  linkedin: "https://www.linkedin.com/in/your-profile/",
-  resumeUrl: "#",
+  linkedin: "https://www.linkedin.com/in/imon-ghose-467a4722a/",
+  resumeUrl: "/CV.docx",
   imageUrl: "/profile.jpg",
   summary:
     "A short professional summary will go here. Use this space to describe your current focus, core technical strengths, and the kinds of problems you enjoy solving.",

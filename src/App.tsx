@@ -116,6 +116,33 @@ function Hero() {
               Resume <FileText size={17} />
             </a>
           </div>
+          <div className="mt-5 flex items-center gap-3">
+            <a
+              aria-label="LinkedIn profile"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.035] text-white/60 transition hover:border-pine/60 hover:text-pine"
+              href={profile.linkedin}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Linkedin size={18} />
+            </a>
+            <a
+              aria-label="GitHub profile"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.035] text-white/60 transition hover:border-pine/60 hover:text-pine"
+              href={profile.github}
+              rel="noreferrer"
+              target="_blank"
+            >
+              <Github size={18} />
+            </a>
+            <a
+              aria-label="Email"
+              className="grid h-10 w-10 place-items-center rounded-lg border border-white/10 bg-white/[0.035] text-white/60 transition hover:border-pine/60 hover:text-pine"
+              href={`mailto:${profile.email}`}
+            >
+              <Mail size={18} />
+            </a>
+          </div>
         </motion.div>
         <motion.div className="panel overflow-hidden p-3" {...fadeUp} transition={{ delay: 0.08, duration: 0.5 }}>
           <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[linear-gradient(145deg,#171719,#0b0b0c)]">
