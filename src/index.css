@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 * {
@@ -34,14 +34,15 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #f6f7f2;
-  color: #101820;
+  background: #0b0b0c;
+  color: #f4f4f5;
   font-family: "Inter", system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: rgba(31, 79, 70, 0.2);
+  background: rgba(47, 109, 246, 0.35);
+  color: #ffffff;
 }
 
 @layer components {
@@ -50,14 +51,14 @@ body {
   }
 
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-pine;
+    @apply text-xs font-medium uppercase tracking-[0.22em] text-white/50;
   }
 
   .chip {
-    @apply inline-flex items-center rounded-full border border-slateInk/10 bg-white/70 px-3 py-1 text-sm text-slateInk/70;
+    @apply inline-flex items-center rounded-md border border-white/10 bg-white/[0.035] px-3 py-1 text-sm font-light text-white/60;
   }
 
   .panel {
-    @apply border border-slateInk/10 bg-white/75 shadow-[0_24px_80px_rgba(16,24,32,0.08)] backdrop-blur;
+    @apply border border-white/10 bg-white/[0.035] shadow-[0_24px_80px_rgba(0,0,0,0.26)] backdrop-blur;
   }
 }

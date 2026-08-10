@@ -4,12 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        slateInk: "#101820",
-        pine: "#1f4f46",
-        copper: "#c47f4a",
-        cloud: "#f6f7f2",
-        mist: "#dfe7df",
-        berry: "#7d4458",
+        slateInk: "#0b0b0c",
+        pine: "#2f6df6",
+        copper: "#8f949d",
+        cloud: "#0b0b0c",
+        mist: "#141416",
+        berry: "#d7d9de",
       },
       fontFamily: {
         sans: [
@@ -21,6 +21,7 @@ export default {
           "system-ui",
           "sans-serif",
         ],
+        display: ["Cormorant Garamond", "Georgia", "serif"],
       },
       keyframes: {
         "fade-up": {
