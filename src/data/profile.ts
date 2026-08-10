@@ -1,5 +1,5 @@
 export const profile = {
-  name: "Imon Ghosh",
+  name: "Imon Kalyan Ghosh",
   role: "Your role or target title",
   headline: "Building thoughtful software, research, and digital products.",
   location: "City, Country",
@@ -8,6 +8,7 @@ export const profile = {
   github: "https://github.com/imonghosh",
   linkedin: "https://www.linkedin.com/in/your-profile/",
   resumeUrl: "#",
+  imageUrl: "/profile.jpg",
   summary:
     "A short professional summary will go here. Use this space to describe your current focus, core technical strengths, and the kinds of problems you enjoy solving.",
 };

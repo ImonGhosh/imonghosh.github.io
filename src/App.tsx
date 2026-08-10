@@ -83,6 +83,8 @@ function Navbar() {
 }
 
 function Hero() {
+  const [imageLoaded, setImageLoaded] = useState(true);
+
   return (
     <section
       className="relative isolate overflow-hidden bg-slateInk pt-28 sm:pt-32"
@@ -115,19 +117,28 @@ function Hero() {
             </a>
           </div>
         </motion.div>
-        <motion.div className="panel p-5" {...fadeUp} transition={{ delay: 0.08, duration: 0.5 }}>
-          <div className="grid aspect-[4/5] place-items-center rounded-sm bg-[linear-gradient(145deg,#171719,#0b0b0c)] p-8 text-white">
-            <div className="text-center">
-              <div className="mx-auto grid h-24 w-24 place-items-center rounded border border-white/10 bg-white/[0.04] text-3xl font-semibold">
-                IG
+        <motion.div className="panel overflow-hidden p-3" {...fadeUp} transition={{ delay: 0.08, duration: 0.5 }}>
+          <div className="relative aspect-[4/5] overflow-hidden rounded-sm bg-[linear-gradient(145deg,#171719,#0b0b0c)]">
+            {imageLoaded ? (
+              <img
+                alt={`${profile.name} profile portrait`}
+                className="h-full w-full object-cover object-center"
+                onError={() => setImageLoaded(false)}
+                src={profile.imageUrl}
+              />
+            ) : (
+              <div className="grid h-full place-items-center p-8 text-center text-white">
+                <div>
+                  <div className="mx-auto grid h-24 w-24 place-items-center rounded border border-white/10 bg-white/[0.04] text-3xl font-semibold">
+                    IG
+                  </div>
+                  <p className="mt-8 text-xs uppercase tracking-[0.22em] text-white/40">
+                    Add profile.jpg to public
+                  </p>
+                </div>
               </div>
-              <p className="mt-8 text-xs uppercase tracking-[0.22em] text-white/40">
-                Profile image placeholder
-              </p>
-              <p className="mt-3 text-lg font-light leading-7 text-white/60">
-                Replace this block with a photo, illustration, or project visual.
-              </p>
-            </div>
+            )}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-slateInk/72 to-transparent" />
           </div>
         </motion.div>
       </div>
