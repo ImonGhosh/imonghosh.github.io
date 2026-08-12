@@ -292,12 +292,9 @@ export const projectGroups = [
         name: "AI-Powered SQL & Visual Analytics Platform",
         date: "April 2026",
         points: [
-          "Developed an end-to-end AI analytics platform that transforms natural language input into optimized SQL queries, actionable insights, and interactive data visualizations for any connected Supabase environment.",
-          "Enabled secure schema extraction and query execution via MCP connectivity.",
-          "Orchestrated a multi-agent backend for SQL and chart generation, KPI recommendations, and metadata-aware reasoning.",
-          "Set up Redis caching and SQS-based async pipelines to offload heavy workloads from latency-sensitive request flows.",
-          "Built a scalable serverless AWS architecture via Lambda, API Gateway, S3, and CloudFront for full-stack deployment.",
-          "Automated infrastructure provisioning and release workflows using Terraform and GitHub Actions CI/CD.",
+          "Built an AI-powered analytics platform that converts natural-language input into optimized SQL, KPI insights, and data visualizations across connected Supabase environments using MCP-based schema and query access.",
+          "Orchestrated a multi-agent backend for metadata-aware SQL generation, chart creation, and KPI recommendations, with Redis caching and SQS-based asynchronous processing for scalable workloads.",
+          "Deployed a serverless AWS architecture using Lambda, API Gateway, S3, and CloudFront, with infrastructure and releases automated through Terraform and GitHub Actions CI/CD.",
         ],
         links: [
           {
@@ -315,12 +312,9 @@ export const projectGroups = [
         name: "Multimodal RAG Chatbot",
         date: "March 2026",
         points: [
-          "Built a RAG application for querying over websites, multiple file types, audio, and embedded images.",
-          "Created an ingestion pipeline with Crawl4AI for intelligent web-crawling and Docling for parsing and chunking.",
-          "Designed a structured knowledge storage using PostgreSQL for embeddings, metadata, and semantic search.",
-          "Implemented a PydanticAI RAG agent with tool routing to enable adaptive and hybrid retrieval strategies.",
-          "Performed evaluation using DeepEval (>90% on all critical metrics), observability using Langfuse and CloudWatch.",
-          "Containerized via Docker, pushed to Amazon ECR, and deployed to AWS AppRunner.",
+          "Built a multimodal RAG application for querying websites, documents, audio, and embedded images, with ingestion powered by Crawl4AI and Docling.",
+          "Developed a PydanticAI RAG agent with adaptive tool routing and hybrid retrieval, backed by PostgreSQL for embeddings, metadata, and semantic search.",
+          "Achieved >90% on critical DeepEval metrics, added observability with Langfuse and CloudWatch, and deployed the Dockerized application to AWS App Runner via Amazon ECR.",
         ],
         links: [
           {
@@ -336,7 +330,7 @@ export const projectGroups = [
         points: [
           "Built a job-search automation workflow using n8n, integrating LinkedIn data ingestion, AI-based relevance scoring, and automated resume tailoring.",
           "Utilized Apify and Google API to scrape and log structured job data to a personal Google Sheets repository.",
-          "Created a chatbot as an n8n webhook trigger that captures a LinkedIn job URL and triggers the entire automation workflow.",
+          "Created a chatbot as a n8n webhook trigger that captures a LinkedIn job URL and triggers the entire automation workflow.",
         ],
         links: [
           {
@@ -344,7 +338,49 @@ export const projectGroups = [
             href: "https://github.com/ImonGhosh/n8n-job-search-automation",
           },
         ],
-        tags: ["n8n", "AI Automation", "Apify", "Google API", "LinkedIn Scraping", "Resume Tailoring"],
+        tags: ["n8n", "AI Automation", "Web Scraping", "Apify", "Google API"],
+      },
+      {
+        name: "Automated Multi-Agent Trading Simulator",
+        date: "November 2025",
+        points: [
+          "A fully automated multi-agent trading simulation platform that ingests real-time market data and runs autonomous execution cycles with configurable scheduling and dynamic strategy optimization to maximise profit.",
+        ],
+        links: [
+          {
+            label: "View Project",
+            href: "https://github.com/ImonGhosh/automated-multi-agent-trading-simulator",
+          },
+        ],
+        tags: ["Python", "FastMCP", "Gradio"],
+      },
+      {
+        name: "AI-powered Deal Discovery & Pricing Platform",
+        date: "TBD",
+        points: [
+          "An LLM & RAG based agentic system for real-time deal discovery and price estimation. It ranks opportunities by estimated discount and triggers a real-time notification when high value opportunities are detected.",
+        ],
+        links: [
+          {
+            label: "View Project",
+            href: "https://github.com/ImonGhosh/ai-powered-multi-agent-deal-finder",
+          },
+        ],
+        tags: ["Vector DB", "RAG"],
+      },
+      {
+        name: "Fine-tuned Llama 3.1 8B for price forecasting with QLoRA",
+        date: "TBD",
+        points: [
+          "Fine-tuned a Llama-3.1-8B model with QLoRA on 20k Amazon marketplace samples, outperforming GPT-4o by 5% while reducing average prediction error by 16.1%, and deployed it as a scalable serverless API.",
+        ],
+        links: [
+          {
+            label: "View Project",
+            href: "https://github.com/ImonGhosh/fine-tuned-llama-product-pricer",
+          },
+        ],
+        tags: ["LLM Fine-tuning", "PEFT", "QLoRA"],
       },
     ],
   },
@@ -401,7 +437,7 @@ export const mastersThesis = {
   description:
     "Currently, I am working on building a Context-Aware GenAI System for facilitating Data Science Project Management by providing AI-powered support across requirement understanding, project planning, skill-based task allocation, and personalized task-level guidance, under human-in-the-loop review.",
   impact:
-    "This work aims to alleviate several reported challenges that current Data Science teams face while executing collaborative projects and further cement the effectiveness of Generative AI in solving real-world problems.",
+    "This work aims to alleviate several reported challenges that current Data Science teams face during execution of collaborative projects and further cement the effectiveness of Generative AI in solving real-world problems.",
 };
 
 export const education = [

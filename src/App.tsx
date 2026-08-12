@@ -1,4 +1,5 @@
 import {
+  ArrowDown,
   ArrowUpRight,
   Bot,
   Cloud,
@@ -190,11 +191,13 @@ function Hero() {
               className="inline-flex items-center gap-2 rounded-lg bg-pine px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-500"
               href="#projects"
             >
-              View Projects <ArrowUpRight size={17} />
+              View my work <ArrowDown size={17} />
             </a>
             <a
               className="inline-flex items-center gap-2 rounded-lg border border-pine/60 bg-transparent px-5 py-3 text-sm font-semibold text-pine transition hover:border-pine hover:bg-pine/10"
               href={profile.resumeUrl}
+              rel="noreferrer"
+              target="_blank"
             >
               Resume <FileText size={17} />
             </a>
@@ -475,7 +478,7 @@ function Projects() {
               <div className="mb-5 flex items-center justify-between gap-4">
                 <h3 className="text-2xl font-semibold text-white">{personalProjects.title}</h3>
                 <a
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-pine transition hover:text-blue-400"
+                  className="inline-flex items-center gap-2 rounded-lg bg-pine px-4 py-2 text-sm font-semibold text-white shadow-[0_12px_30px_rgba(47,109,246,0.18)] transition hover:bg-blue-500"
                   href="https://github.com/ImonGhosh"
                   rel="noreferrer"
                   target="_blank"
@@ -484,16 +487,26 @@ function Projects() {
                 </a>
               </div>
               <div className="grid gap-4 lg:grid-cols-3">
-                {personalProjects.projects.map((project) => (
+                {personalProjects.projects.slice(0, 3).map((project) => (
                   <div
                     className="flex min-h-full flex-col rounded-xl border border-white/10 bg-slateInk/70 p-5 transition hover:border-pine/50 hover:bg-white/[0.045]"
                     key={project.name}
                   >
                     <div className="flex items-start justify-between gap-4">
                       <h4 className="text-xl font-semibold leading-snug text-white">{project.name}</h4>
-                      <span className="shrink-0 text-xs font-mono text-white/40">{project.date}</span>
+                      {project.links[0] ? (
+                        <a
+                          aria-label={`Open ${project.name}`}
+                          className="shrink-0 text-white/45 transition hover:text-pine"
+                          href={project.links[0].href}
+                          rel="noreferrer"
+                          target="_blank"
+                        >
+                          <ArrowUpRight size={18} />
+                        </a>
+                      ) : null}
                     </div>
-                    <ul className="mt-4 grid gap-2 text-sm font-light leading-6 text-white/56">
+                    <ul className="mt-4 grid gap-2 text-sm font-light leading-6 text-white/60">
                       {project.points.map((point) => (
                         <li className="flex gap-2" key={point}>
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pine" />
@@ -503,10 +516,7 @@ function Projects() {
                     </ul>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
-                        <span
-                          className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-1 text-xs font-medium text-white/50"
-                          key={tag}
-                        >
+                        <span className="chip" key={tag}>
                           {tag}
                         </span>
                       ))}
@@ -527,6 +537,56 @@ function Projects() {
                   </div>
                 ))}
               </div>
+              {personalProjects.projects.length > 3 ? (
+                <div className="mt-4 grid gap-4 lg:grid-cols-3">
+                  {personalProjects.projects.slice(3).map((project) => (
+                    <div
+                      className="flex min-h-full flex-col rounded-xl border border-white/10 bg-white/[0.025] p-4 transition hover:border-pine/50 hover:bg-white/[0.045]"
+                      key={project.name}
+                    >
+                      <div className="flex items-start justify-between gap-4">
+                        <div>
+                          <h4 className="text-lg font-semibold leading-snug text-white">{project.name}</h4>
+                        </div>
+                        {project.links[0] ? (
+                          <a
+                            aria-label={`Open ${project.name}`}
+                            className="shrink-0 text-white/45 transition hover:text-pine"
+                            href={project.links[0].href}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            <ArrowUpRight size={16} />
+                          </a>
+                        ) : null}
+                      </div>
+                      <p className="mt-3 text-sm font-light leading-6 text-white/60">
+                        {project.points[0]}
+                      </p>
+                      <div className="mt-auto flex flex-wrap gap-2 pt-5">
+                        {project.tags.map((tag) => (
+                          <span className="chip" key={tag}>
+                            {tag}
+                          </span>
+                        ))}
+                      </div>
+                      <div className="flex flex-wrap gap-3 pt-5">
+                        {project.links.map((link) => (
+                          <a
+                            className="inline-flex items-center gap-2 text-sm font-semibold text-pine transition hover:text-blue-400"
+                            href={link.href}
+                            key={link.href}
+                            rel="noreferrer"
+                            target="_blank"
+                          >
+                            {link.label} <ArrowUpRight size={14} />
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
             </motion.article>
           ) : null}
 
@@ -546,7 +606,7 @@ function Projects() {
                       <h4 className="text-xl font-semibold leading-snug text-white">{project.name}</h4>
                       <span className="shrink-0 text-xs font-mono text-white/40">{project.date}</span>
                     </div>
-                    <ul className="mt-4 grid gap-2 text-sm font-light leading-6 text-white/58 sm:grid-cols-3">
+                    <ul className="mt-4 grid gap-2 text-sm font-light leading-6 text-white/60 sm:grid-cols-3">
                       {project.points.map((point) => (
                         <li className="flex gap-2" key={point}>
                           <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-pine" />
@@ -556,10 +616,7 @@ function Projects() {
                     </ul>
                     <div className="mt-5 flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
-                        <span
-                          className="rounded-md border border-white/10 bg-white/[0.035] px-3 py-1 text-xs font-medium text-white/50"
-                          key={tag}
-                        >
+                        <span className="chip" key={tag}>
                           {tag}
                         </span>
                       ))}
@@ -593,7 +650,7 @@ function Projects() {
               <h3 className="max-w-4xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
                 {mastersThesis.title}
               </h3>
-              <div className="mt-6 grid gap-5 text-base font-light leading-8 text-white/68 md:grid-cols-2">
+              <div className="mt-6 grid gap-5 text-base font-light leading-8 text-white/60 md:grid-cols-2">
                 <p>{mastersThesis.description}</p>
                 <p>{mastersThesis.impact}</p>
               </div>
