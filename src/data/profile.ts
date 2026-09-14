@@ -249,7 +249,8 @@ export const experiences = [
     period: "June 2025 - Current",
     location: "Magdeburg, Germany",
     points: [
-      "Developed and enhanced full-stack features for the OVGU university app using Spring Boot/Kotlin, TypeScript, Flutter, and PostgreSQL, improving user engagement by 20%.",
+      "Developed and enhanced full-stack features for the OVGU university app using Spring Boot/Kotlin, Vue, Flutter, and PostgreSQL, improving user engagement by 20%.",
+      "Designed and implemented automated test suites for unit, integration, and E2E testing using JUnit, Vitest, Flutter, and Playwright, improving software quality and release stability.",
       "Performed Linux-based server migrations and maintained containerized services across multiple environments.",
       "Managed Android and iOS releases, including packaging, app store submission, and updates.",
       "Handled end-to-end deployment, monitoring, and incident response to ensure high availability and reliable operation.",
